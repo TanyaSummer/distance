@@ -1,0 +1,665 @@
+*{
+    box-sizing: border-box;/*"ЭТО ВАЖНОЕ ПРАВИЛО!
+    для того чтобы все блоки имели 
+    точный размер, который прописывается, иначе они 
+    все не точные - вместо 1200 будет 1202px*/
+}
+
+body {
+    font-family: sans-serif;
+    background: #E5E5E5;
+    padding-top: 46px; /*отступ от края браузера, когда шапка приклеена*/
+}
+
+.header {
+    background: #0050B3;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: fixed;  /*приклеивание шапки*/
+    top: 0;  /*приклеивание шапки*/
+    left: 0%;  /*приклеивание шапки*/
+    width: 100%;  /*приклеивание шапки*/
+    z-index: 99;  /*приклеивание шапки*/
+}
+.header-block{
+    max-width: 1200px;
+    margin: auto; /*располагает блок по центру*/
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.m-menu{
+  display: none;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* padding: 0px; */
+  
+  
+}
+.m-menu .line{
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+.search-input {
+    padding: 5px 30px 5px 12px;
+    width: 336px;
+    background: white;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-image: url(../img/serch-icon.svg);
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar{
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;/*чтобы картинка не сжималась и не растягивалась*/
+    
+}
+
+.user-name {
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.navigation-panel {
+   margin: 0 12px 0 12px;
+    display: flex;
+    align-content: center;
+}
+
+.navigation-link {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+    /* margin-right: 12px; */
+    /* margin-left: 12px; */
+}
+.navigation-link.home {
+    margin-right: 12px;
+}
+
+.navigation-link:before {
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-right: 12px;
+}
+
+.navigation-link:last-child:after{
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-left: 12px;
+}
+
+.icons-panel{
+    display: flex;
+    align-items: center;
+}
+.icon-link:last-child:before{
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 16px;
+    background: #003A8C;
+    margin-right: 12px;
+    
+}
+/* .icon-link-nav {
+    margin-left: -12px;
+} */
+
+.icon-link{
+    margin-right: 17px;
+    text-decoration: none;
+}
+
+.header-icon {
+    fill: #002766;
+}
+.header-icon:hover{
+    fill: #FFFFFF;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+.menu-sidebar{
+    min-width: 192px;
+    margin-top: 16px;
+    margin-right: 18px;
+}
+.menu-sidebar .user {
+padding-left: 10px;
+}
+.menu-sidebar .user-avatar {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-sidebar .user-name{
+    color: #262626;
+    font-size: 14px;
+    font-weight: normal;
+    
+}
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: #595959;
+    line-height: 22px;
+    font-weight: normal;
+}
+.nav-link-down{
+    margin: 4.69px 2.5px;
+}
+.nav-link:hover {
+    background: #FFFFFF;
+    border-radius: 4px;
+    color: #262626;
+}
+.nav-text{
+    margin-left: 12px;
+}
+.nav-text.last {
+    color: #1890FF;
+}
+.nav-text-icon {
+    margin-left: auto;
+    fill: #595959;
+}
+.nav-text-icon:hover{
+  fill: #1890FF;
+}
+.nav-title {
+    padding-left: 10px;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    color: #262626;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+
+}
+.main-feed{
+    max-width: 588px;
+    margin-top: 18px;
+    flex-grow: 1;
+}
+.create-post{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+}
+.create-post-header{
+    background: #F5F5F5;
+    padding: 9px 16px;
+}
+.create-post-title{
+    margin: 0;
+    color: #595959;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+.create-post-body{
+    padding: 16px 16px 24px 16px;
+    display: flex;
+    
+}
+.create-post-input{
+    margin-left: 8px;
+    color: #8C8C8C;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto; /* 3 последних стиля -чтобы текст не 
+    вываливался за границы инпута*/
+}
+.tag{
+    background: #F5F5F5;
+    border-radius: 48px;
+    height: 40px;
+    border: none;
+    padding: 9px 12px;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.tag:hover{
+  background:#aabdc5af;
+}
+
+.tag-icon {
+    margin-right: 8px;
+}
+.create-post-footer:before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #E8E8E8;
+    margin-bottom: 16px;
+}
+.create-post-footer {
+    display: flex;
+    padding: 0 16px 16px;
+    flex-wrap: wrap;
+}
+.tag:last-child {
+    width: 48px;
+    justify-content: center;
+}
+.setting-icon{
+  fill:#8C8C8C;
+}
+
+.setting-icon:hover{
+    fill: #1890FF;
+}
+.post{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    margin: 16px 0;
+    padding: 16px;
+}
+.post-header{
+    display: flex;
+    justify-content: space-between;
+}
+.post-button, .setting-ic {
+    border: none;
+    background: none;
+    display: flex;
+    /* padding: 0;
+    height: 24px; */
+}
+.post-button-icon {
+  fill:#595959;
+}
+
+.post-button-icon:hover{ 
+  fill:#1890FF; } /* при наведении курсора мышки */
+  
+.post-header .user-avatar{
+    width: 48px;
+    height: 48px;
+}
+.post-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-author {
+    width: 100%;
+    color: #0050B3;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.post-info-time {
+    color: #8C8C8C;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.post-time-dot {
+    margin: 6px 0 6px 6px;
+}
+.post-text {
+    color: #595959;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+.post-text a{
+    color: #096DD9;
+    text-decoration: none;
+}
+.post-image {
+    border: 1px solid #BFBFBF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    max-width: 100%;/*чтобы картинка не вылазилаза пределы поста*/
+}
+.likes {
+    margin: 9px 0;
+    display: flex;
+    align-items: center;
+}
+.likes-counter {
+    color: #595959;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 4px;
+}
+.post-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.post-button {
+    color: #595959;
+    display: flex;
+    align-items: center;
+}
+.post-footer:before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #E8E8E8;
+    margin-bottom: 16px;
+}
+.post-button-text{
+    margin-left: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600; 
+}
+.right-sidebar {
+    margin-left: 24px;
+    margin-top: 18px;
+    width: 384px;
+}
+.stories {
+    background: #FFFFFF;    
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 16px 16px 16px 24px;
+}
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.story-title{
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+    font-weight: 600;
+}
+.story-buttons {
+    display: flex;
+    align-items: center;
+}
+.story-button-link {
+    display: flex;
+    align-items: center;
+}
+.story-buttons a {
+    color: #0050B3;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 8px;
+}
+.stories-icon {
+    margin-right: 4px;
+}
+.story-item-add, .story-item {
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
+    text-decoration: none;
+}
+.story-item-add img, .story-item img {
+    width: 48px;
+    height: 48px;
+}
+.story-item-text {
+    display: flex;
+    flex-direction: column;
+}
+.story-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #8C8C8C;
+}
+.story-title {
+    color: #0050B3;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.birthday {
+  margin-top: 16px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  
+}
+.birthday-content{
+  display: flex;
+  align-items: center;
+  padding: 16px 16px;
+}
+.birthday-info {
+  color: #595959;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.birthday-name{
+  color: #0050B3;
+  font-weight: 600;
+}
+
+.yourPage{
+  margin-top: 16px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #595959;;
+}
+.yourPage-header{
+  padding: 9px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.yourPage-header-text{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+.yourPage-header-button{
+  border: none;
+  background: none;
+}
+.yourPage-info:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #E8E8E8;
+  /* margin-bottom: 16px; */
+  
+}
+.yourPage-info:after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #E8E8E8;
+  /* margin-bottom: 16px; */
+  
+}
+.yourPage-info{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.yourPage-info-img{
+  margin: 16px 12px;
+}
+
+.info-name, .birthday-name{
+  color: #0050B3;
+font-weight: 600;
+font-size: 14px;
+text-decoration: none;
+}
+
+.info-messages, .notification {
+  color: #8C8C8C;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.messages-icon, .notification-icon {
+  margin: 4px 4px 4px 0;
+}
+
+.notification-block {
+  display: flex; 
+}
+
+.notification-counter{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 17px;
+  height: 22px;
+  color: #595959;
+  border-radius: 4px;
+  border: 1px solid #D9D9D9;
+  margin: 4px; 
+  font-size: 12px;
+}
+.yourPage-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  
+}
+.likes-button, .posts, .views{
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  width: 118px;
+  height: 40px;
+  color: #595959;
+  font-size: 16px;
+}
+.likes-button {
+  border-radius: 4px 0 0 4px;
+}
+.likes-button:hover,.posts:hover,.views:hover{  
+  border-color: #1890FF;
+  color: #1890FF;  
+}
+.posts {
+  border-radius: 0 4px 4px 0;
+}
+
+.yourPage-counter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 16px;
+}
+.counter-info{
+  color: #262626;
+  font-size: 24px;
+}
+
+.counter-text{
+  color: #8C8C8C;
+  font-size: 14px;
+}
+
+@media (max-width:1200px){
+  .right-sidebar{
+    display: none;
+  }
+  .container, .header-block{
+    width: 95%;
+  }
+}
+@media (max-width:960px){
+ .header .user{
+   display: none;
+ }
+ 
+}
+@media (max-width:840px){
+.menu-sidebar{
+  position: fixed;
+  left: 0;
+  top: 36px;
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  background-color: #f1f1f1;
+  padding-top: 12px;
+  padding-left: 2%;
+  transform: translateX(-100%); /*сделает так, чтобы .menu-sidebar по умолчанию был скрыт*/
+  transition: transform 0.2s;/*.menu-sidebar выезжает плавно*/
+}
+.menu-sidebar.activ{
+  transform: translateX(0%);/*возвращает .menu-sidebar на исходнуюпозицию. Работает с js файлом*/
+}
+.m-menu{
+  display: flex;
+}
+.search-input{
+  max-width: 236px;
+}
+}
+@media (max-width:760px){
+  .search{
+    display: none;
+  }
+}
